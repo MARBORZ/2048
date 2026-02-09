@@ -1,0 +1,100 @@
+$border-radius-vmin: 1vmin;
+
+*,
+::after,
+::before{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @content
+}
+
+body{
+
+    background-color: #333;
+    height: 100%;
+}
+
+
+
+.back{
+    margin: 30px 20px;
+
+    &__title{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 30px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: lighter;
+        padding: 10px 50px;
+        background-color: hsl(20, 25%, var(--text-lightness));
+        border-radius:  1vmin;
+        transition: all .2s;
+
+        &:hover{
+            background-color: #fff;
+            color: hsl(20, 25%, var(--text-lightness));
+        }
+
+    }
+}
+
+.container{
+    @include flex;
+}
+
+.board{
+    --cell-size: 20vmin;
+    --cell-gap: 2vmin;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, var(--cell-size));
+    grid-template-rows: repeat(4, var(--cell-size));
+    gap: var(--cell-gap);
+    border-radius: $border-radius-vmin;
+
+    &__cell{
+        background-color: #444;
+        border-radius: $border-radius-vmin;
+    }
+
+    &__tile{
+        --y: 1;
+        --x: 2;
+        position: absolute;
+        top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)));
+        left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)));
+        @include flex;        width: 20vmin;
+        height: 20vmin;
+        border-radius: $border-radius-vmin;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 7.5vmin;
+        font-weight: lighter;
+        background-color: hsl(25, 60%, var(--bg-lightness));
+        color: hsl(20, 25%, var(--text-lightness));
+        transition: 100ms;
+        animation: show 200ms;
+    }
+
+
+
+}
+
+
+@keyframes show {
+    0%{
+        opacity: .5;
+        transform: scale(0);
+    }    
+}
+
+
+
+
+
+
