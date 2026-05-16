@@ -1,10 +1,10 @@
 # 2048 Game
 
-A classic 2048 puzzle game implementation built with vanilla JavaScript. Slide numbered tiles on a grid to combine them and create a tile with the number 2048.
+The 2048 puzzle game in vanilla JavaScript. Slide tiles to combine them and reach 2048.
 
 ## 🎮 About
 
-This is a browser-based implementation of the popular 2048 game. The objective is to slide numbered tiles on a 4×4 grid to combine them and create a tile with the number 2048. When two tiles with the same number touch, they merge into one with their sum.
+Browser version of 2048. Use arrow keys to slide tiles on a 4×4 grid. When two tiles with the same number touch, they merge. Goal is to get a 2048 tile.
 
 ## ✨ Features
 
